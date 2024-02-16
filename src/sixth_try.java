@@ -38,18 +38,18 @@ class file_handle_select extends FileFilter {
     }
 }
 
-class file_handle_save_j extends FileFilter {
-    public boolean accept(File f) {
-        if (f.isDirectory())
-            return true;
-        String s = f.getName();
-        return s.endsWith(".java");
-    }
+// class file_handle_save_j extends FileFilter {
+//     public boolean accept(File f) {
+//         if (f.isDirectory())
+//             return true;
+//         String s = f.getName();
+//         return s.endsWith(".java");
+//     }
 
-    public String getDescription() {
-        return "*.java";
-    }
-}
+//     public String getDescription() {
+//         return "*.java";
+//     }
+// }
 
 class file_handle_save_txt extends FileFilter {
     public boolean accept(File f) {
@@ -388,15 +388,15 @@ public class sixth_try {
         long Key = public_key;
         try {
             JFileChooser jFileChooser = new JFileChooser();
-            jFileChooser.addChoosableFileFilter(new file_handle_save_j());
+            // jFileChooser.addChoosableFileFilter(new file_handle_save_j());
             jFileChooser.addChoosableFileFilter(new file_handle_save_txt());
             jFileChooser.setSelectedFile(new File("new-file.txt"));
             int respond = jFileChooser.showSaveDialog(null);
             if (respond == JFileChooser.APPROVE_OPTION) {
                 String extension = jFileChooser.getFileFilter().getDescription();
-                if (extension.equals("*.java")) {
-                    file_ext = ".java";
-                }
+                // if (extension.equals("*.java")) {
+                //     file_ext = ".java";
+                // }
                 if (extension.equals("*.txt")) {
                     file_ext = ".txt";
                 }
