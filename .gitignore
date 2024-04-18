@@ -1,4 +1,5 @@
 .vscode
 lib
 out
+jar
 src/resources
