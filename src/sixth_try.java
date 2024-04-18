@@ -1,14 +1,8 @@
-/*
-made by buddhabhushan sawant as a beginner level project for java
-i asked myself existential crisis questions while making this
-and while cursing this legacy(old) as hell language : java
- */
-
-// import mdlaf.MaterialLookAndFeel;
-
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 
+// custom new stylish material ui 
+// https://jar-download.com/artifacts/io.github.vincenzopalazzo/material-ui-swing/1.1.4
 import mdlaf.MaterialLookAndFeel;
 
 import java.awt.*;
@@ -37,19 +31,6 @@ class file_handle_select extends FileFilter {
         return "Text file";
     }
 }
-
-// class file_handle_save_j extends FileFilter {
-//     public boolean accept(File f) {
-//         if (f.isDirectory())
-//             return true;
-//         String s = f.getName();
-//         return s.endsWith(".java");
-//     }
-
-//     public String getDescription() {
-//         return "*.java";
-//     }
-// }
 
 class file_handle_save_txt extends FileFilter {
     public boolean accept(File f) {
@@ -87,7 +68,6 @@ public class sixth_try {
         jj.setLayout(null);
 
         // context with icon
-        // ImageIcon img_g = new ImageIcon("src/resources/images/add_file.png");
         URL link_add = getClass().getResource("resources/images/add_file.png");
         Image img_g = Toolkit.getDefaultToolkit().getImage(link_add);
         JLabel jb_l = new JLabel("Choose file for encrypt/decrypt", new ImageIcon(img_g), SwingConstants.LEFT);
@@ -112,7 +92,6 @@ public class sixth_try {
         jj.getContentPane().add(j_txt_field);
 
         // browse button
-        // ImageIcon img_br = new ImageIcon("src/resources/images/browse.png");
         URL link_browse = getClass().getResource("resources/images/browse.png");
         Image img_br = Toolkit.getDefaultToolkit().getImage(link_browse);
         JButton browse = new JButton("Browse", new ImageIcon(img_br));
@@ -122,7 +101,6 @@ public class sixth_try {
         jj.getContentPane().add(browse);
 
         // encrypt button
-        // ImageIcon img_en = new ImageIcon("src/resources/images/en.png");
         URL link_en = getClass().getResource("resources/images/en.png");
         Image img_en = Toolkit.getDefaultToolkit().getImage(link_en);
         JButton en = new JButton("Encrypt", new ImageIcon(img_en));
@@ -133,7 +111,6 @@ public class sixth_try {
         jj.getContentPane().add(en);
 
         // decrypt button
-        // ImageIcon img_de = new ImageIcon("src/resources/images/de.png");
         URL link_de = getClass().getResource("resources/images/de.png");
         Image img_de = Toolkit.getDefaultToolkit().getImage(link_de);
         JButton de = new JButton("Decrypt", new ImageIcon(img_de));
@@ -144,7 +121,6 @@ public class sixth_try {
         jj.getContentPane().add(de);
 
         // cancel button
-        // ImageIcon img_can = new ImageIcon("src/resources/images/cancel.png");
         URL link_can = getClass().getResource("resources/images/cancel.png");
         Image img_can = Toolkit.getDefaultToolkit().getImage(link_can);
         JButton cancel = new JButton("Cancel", new ImageIcon(img_can));
@@ -157,13 +133,7 @@ public class sixth_try {
         j_fi_choose = new JFileChooser();
         j_fi_choose.setFileFilter(new file_handle_select());
 
-        // app icon
-        // Image img =
-        // Toolkit.getDefaultToolkit().getImage("src/resources/images/icon.ico");
-        // jj.setIconImage(img);
-
         // dark/light mode
-        // ImageIcon img_gg = new ImageIcon("src/resources/images/mode.png");
         URL link_mode = getClass().getResource("resources/images/mode.png");
         Image img_gg = Toolkit.getDefaultToolkit().getImage(link_mode);
         JToggleButton tgl_btn = new JToggleButton("Dark / Light", new ImageIcon(img_gg));
@@ -352,9 +322,9 @@ public class sixth_try {
 
         // better ui
         try {
-        UIManager.setLookAndFeel(new MaterialLookAndFeel());
+            UIManager.setLookAndFeel(new MaterialLookAndFeel());
         } catch (UnsupportedLookAndFeelException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
 
         // calling construct
@@ -395,7 +365,7 @@ public class sixth_try {
             if (respond == JFileChooser.APPROVE_OPTION) {
                 String extension = jFileChooser.getFileFilter().getDescription();
                 // if (extension.equals("*.java")) {
-                //     file_ext = ".java";
+                // file_ext = ".java";
                 // }
                 if (extension.equals("*.txt")) {
                     file_ext = ".txt";
