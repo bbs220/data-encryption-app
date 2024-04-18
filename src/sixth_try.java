@@ -364,9 +364,6 @@ public class sixth_try {
             int respond = jFileChooser.showSaveDialog(null);
             if (respond == JFileChooser.APPROVE_OPTION) {
                 String extension = jFileChooser.getFileFilter().getDescription();
-                // if (extension.equals("*.java")) {
-                // file_ext = ".java";
-                // }
                 if (extension.equals("*.txt")) {
                     file_ext = ".txt";
                 }
